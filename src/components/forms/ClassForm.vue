@@ -88,10 +88,9 @@
     </transition>
     <div class="q-ma-sm alignItems">
       <q-btn
-        :disable="subjectIcon === '' || subjectName === ''"
+        :label="error ? error : 'Add Subject'"
         @click="addDisplaySubject"
-        >Add Subject</q-btn
-      >
+      ></q-btn>
       <q-icon
         :name="subjectIcon"
         color="primary"
@@ -204,7 +203,7 @@ export default {
       classTag: "",
       allIcons,
       icons: [],
-
+      error: "",
       classes: [],
       numStudents: 1,
       subjectsToCreate: [],
@@ -311,6 +310,7 @@ export default {
           name: this.subjectName,
           icon: this.subjectIcon
         };
+
         this.displaySubject.push(subject);
       }
 

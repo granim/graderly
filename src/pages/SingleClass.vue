@@ -467,7 +467,7 @@ export default {
           id: Math.random(1).toString(),
           name: "",
           courseId: this.$route.params.id,
-          assignment: [],
+          asignments: [],
           grades: []
         });
       }
